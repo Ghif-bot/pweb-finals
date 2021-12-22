@@ -177,6 +177,60 @@
                     </ul>
 
                 </nav>
+                 <div class="container-fluid">
+                     <div class="card shadow mb-4">
+                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
+                            <div class="card-body">
+                                <form action="../pweb-ghif/php/proses-edit.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
+            <div class="form-group">
+                <label for="nis"></label>
+                <input type="text" class="form-control" name="nis" placeholder="NIS" value="<?php echo $siswa['nis'] ?>" />
+            </div>
+
+            <div class="form-group">
+                <label for="nama"></label>
+                <input type="text" class="form-control" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="alamat"></label>
+                <textarea class="form-control" name="alamat"><?php echo $siswa['alamat'] ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="jenis_kelamin">j </label>
+                <?php $jk = $siswa['jenis_kelamin']; ?>
+                <select class="form-control" name="agama">
+                    <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
+                    <option <?php echo ($jk == 'Perempuan') ? "selected": "" ?>>Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agama">Agama: </label>
+                <?php $agama = $siswa['agama']; ?>
+                <select class="form-control" name="agama">
+                    <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
+                    <option <?php echo ($agama == 'Kristen') ? "selected": "" ?>>Kristen</option>
+                    <option <?php echo ($agama == 'Hindu') ? "selected": "" ?>>Hindu</option>
+                    <option <?php echo ($agama == 'Budha') ? "selected": "" ?>>Budha</option>
+                    <option <?php echo ($agama == 'Katolik') ? "selected": "" ?>>Katolik</option>
+                    <option <?php echo ($agama == 'Konghucu') ? "selected": "" ?>>Konghucu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="no_hp"></label>
+                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $siswa['no_hp'] ?>" />
+            </div>
+            <br>
+           
+            <div class="form-group">
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
+            </div>
+        </form>
+                                
+                            </div>
+                    </div>
+                </div>
+            </div>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content --> 

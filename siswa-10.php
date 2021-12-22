@@ -177,6 +177,22 @@
                     </ul>
 
                 </nav>
+                <div class="container-fluid">
+                     <div class="card shadow mb-4">
+                         <br>
+                          <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
+                        <h1 class="h3 mb-0 text-gray-800 ">Dashboard</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
+                    </div>
+                                 
+                            <div class="card-body">
+                            <div class="table-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content --> 
@@ -186,6 +202,8 @@
             <!-- End of Main Content -->
 
         </div>
+        
+            
         <!-- End of Content Wrapper -->
 
     </div>

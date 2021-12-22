@@ -59,7 +59,7 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputRepeat-Password" placeholder="Repeat-Password">
                                         </div> 
-                                        <a href="login.php" class="btn btn-primary btn-user btn-block">
+                                        <a href="login.php" class="btn btn btn-primary btn-lg">
                                             Reset Password
                                         </a>
                                         

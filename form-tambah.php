@@ -177,6 +177,53 @@
                     </ul>
 
                 </nav>
+                 <div class="container-fluid">
+                     <div class="card shadow mb-4">
+                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
+                            <div class="card-body">
+                             <form action="../pweb-ghif/php/proses-pendaftarasn.php"  method="POST">
+            <div class="form-group">
+                <label for="nis"></label>
+                <input type="text" class="form-control" name="nis" placeholder="NIS"/>
+            </div>
+             <div class="form-group">
+                <label for="nama"></label>
+                <input type="text" class="form-control" name="nama" placeholder="Nama lengkap"/>
+            </div>
+            <div class="form-group">
+                <label for="alamat"></label>
+                <textarea class="form-control" name="alamat" placeholder="Alamat"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="jenis_kelamin"></label>
+                <select class="form-control" name="jenis_kelamin" placeholder="Jenis Kelamin">
+                    <option>Laki-Laki</option>
+                    <option>Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agama"></label>
+                <select class="form-control" name="agama" >
+                    <option>Islam</option>
+                    <option>Kristen</option>
+                    <option>Hindu</option>
+                    <option>Budha</option>
+                    <option>Katolik</option>
+                     <option>Konghucu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="no_hp"></label>
+                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" />
+            </div>
+            <br>
+            <div class="form-group">
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Daftar" name="daftar" />
+            </div>
+        </form>
+                        </div>
+                    </div>
+                </div>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content --> 
