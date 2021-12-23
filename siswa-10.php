@@ -183,7 +183,7 @@
                      <div class="card shadow mb-4">
                          <br>
                           <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">List Siswa Kelas 10</h1>
                         <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
                     </div>
@@ -218,7 +218,7 @@
                                         echo "<td>".$siswa['no_hp']."</td>";
                                         echo "<td>";
                                         echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
-                                        echo "<a href='hapus.php?id=".$siswa['id']."'>Hapus</a>";
+                                        echo "<a href='./php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
                                         echo "</td>";
                                         echo "</tr>";
                                         }
