@@ -61,7 +61,7 @@
                  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     
                  <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 align-items-center justify-content-center mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Daftar Siswa</h1>
                     </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -190,8 +190,8 @@
                                  
                             <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                <table class="table table-no-border" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="thead-dark">
                                          <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Nama</th>

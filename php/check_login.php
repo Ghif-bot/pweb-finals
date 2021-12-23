@@ -22,19 +22,19 @@ if($check > 0){
         $_SESSION['email'] = $email;
         $_SESSION['roles'] = 1;
         $_SESSION['name'] = mysqli_query($connect, "select name from user where email='$email'");
-        header("location:../home_siswa.php?pesan=berhasil");
+        header("location:../siswa_utama.php?pesan=berhasil");
     }
      elseif ($data['roles']=="2"){
         $_SESSION['email'] = $email;
         $_SESSION['roles'] = 2;
         $_SESSION['name'] = mysqli_query($connect, "select name from user where email='$email'");
-        header("location:../home_guru.php?pesan=berhasil");
+        header("location:../guru_utama.php?pesan=berhasil");
     }
      elseif ($data['roles']=="3"){
         $_SESSION['email'] = $email;
         $_SESSION['roles'] = 3;
         $_SESSION['name'] = mysqli_query($connect, "select name from user where email='$email'");
-        header("location:../home_ortu.php?pesan=berhasil");
+        header("location:../walikelas_utama.php?pesan=berhasil");
     }
 }else{
     header("location:../index.php?pesan=gagal");
