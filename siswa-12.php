@@ -177,6 +177,57 @@
                     </ul>
 
                 </nav>
+                 <div class="container-fluid">
+                     <div class="card shadow mb-4">
+                         <br>
+                          <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
+                        <h1 class="h3 mb-0 text-gray-800 ">List Siswa Kelas 12</h1>
+                        <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
+                    </div>
+                                 
+                            <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                         <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">NIS</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Jenis Kelamin</th>
+                                            <th scope="col">Agama</th>
+                                            <th scope="col">No. Hp</th>
+                                            <th scope="col">Tindakan</th>
+                                        </tr>
+                                    </thead> 
+                                     <tbody>
+                                        <?php
+                                            $sql = "SELECT * FROM siswa_12";
+                                            $query = mysqli_query($connect, $sql);
+                                            while($siswa = mysqli_fetch_array($query)){
+                                         echo "<tr>";
+                                         echo "<td>".$siswa['id']."</td>";
+                                         echo "<td>".$siswa['nama']."</td>";
+                                         echo "<td>".$siswa['nis']."</td>";                                     
+                                        echo "<td>".$siswa['alamat']."</td>";
+                                        echo "<td>".$siswa['jenis_kelamin']."</td>";
+                                        echo "<td>".$siswa['agama']."</td>";
+                                        echo "<td>".$siswa['no_hp']."</td>";
+                                        echo "<td>";
+                                        echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                        echo "<a href='.php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                        }
+                                        ?>
+                                    </tbody>                               
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- End of Topbar -->
 
               
