@@ -1,5 +1,13 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "siswa");
-
-if(mysqli_connect_error()) echo "Koneksi Gagal : " . mysqli_connect_error();
-?>
+ 
+ $server = "localhost";
+ $user = "root";
+ $password = "";
+ $nama_database = "siswa";
+  
+ $connect = mysqli_connect($server, $user, $password, $nama_database);
+  
+ if( !$connect ){
+     die("Gagal terhubung dengan database: " . mysqli_connect_error());
+ }
+ ?>

@@ -181,7 +181,7 @@
                      <div class="card shadow mb-4">
                      <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
                             <div class="card-body">
-                             <form action="../pweb-ghif/php/proses-pendaftarasn.php"  method="POST">
+                             <form action="../pweb-ghif/php/proses-pendaftaran.php"  method="POST">
             <div class="form-group">
                 <label for="nis"></label>
                 <input type="text" class="form-control" name="nis" placeholder="NIS"/>

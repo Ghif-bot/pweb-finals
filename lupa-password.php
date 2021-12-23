@@ -56,11 +56,11 @@
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
-                                        <a href="password.php" class="btn btn-primary btn-user btn-block">
+                                        <a href="new-password.php" class="btn btn-primary btn-user btn-block">
                                             Forgot Password
                                         </a>               
                                     </form>
-                                    <hr>
+                                    
                                 </div>
                             </div>
                         </div>

@@ -58,13 +58,11 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputRepeat-Password" placeholder="Repeat-Password">
-                                        </div> 
-                                        <a href="login.php" class="btn btn btn-primary btn-lg">
-                                            Reset Password
-                                        </a>
-                                        
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    New Password
+                                </button>
                                     </form>
-                                    <hr>
                                 </div>
                             </div>
                         </div>

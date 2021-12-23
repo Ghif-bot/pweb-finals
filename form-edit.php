@@ -1,3 +1,25 @@
+<?php
+include('./php/config.php');
+
+// kalau tidak ada id di query string
+if( !isset($_GET['id']) ){
+    header('Location: list-siswa.php');
+}
+
+//ambil id dari query string
+$id = $_GET['id'];
+
+// buat query untuk ambil data dari database
+$sql = "SELECT * FROM siswa_10 WHERE id=$id";
+$query = mysqli_query($connect, $sql);
+$siswa = mysqli_fetch_assoc($query);
+
+// jika data yang di-edit tidak ditemukan
+if( mysqli_num_rows($query) < 1 ){
+    die("data tidak ditemukan...");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -181,7 +203,7 @@
                      <div class="card shadow mb-4">
                      <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
                             <div class="card-body">
-                                <form action="../pweb-ghif/php/proses-edit.php" method="POST">
+                                <form action="./php/proses-edit.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
             <div class="form-group">
                 <label for="nis"></label>
@@ -197,7 +219,7 @@
                 <textarea class="form-control" name="alamat"><?php echo $siswa['alamat'] ?></textarea>
             </div>
             <div class="form-group">
-                <label for="jenis_kelamin">j </label>
+                <label for="jenis_kelamin"></label>
                 <?php $jk = $siswa['jenis_kelamin']; ?>
                 <select class="form-control" name="agama">
                     <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
@@ -205,7 +227,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="agama">Agama: </label>
+                <label for="agama"></label>
                 <?php $agama = $siswa['agama']; ?>
                 <select class="form-control" name="agama">
                     <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
