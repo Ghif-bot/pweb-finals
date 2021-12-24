@@ -205,10 +205,6 @@ if( mysqli_num_rows($query) < 1 ){
                             <div class="card-body">
                                 <form action="./php/proses-edit.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
-            <div class="form-group">
-                <label for="nis"></label>
-                <input type="text" class="form-control" name="nis" placeholder="NIS" value="<?php echo $siswa['nis'] ?>" />
-            </div>
 
             <div class="form-group">
                 <label for="nama"></label>
@@ -221,7 +217,7 @@ if( mysqli_num_rows($query) < 1 ){
             <div class="form-group">
                 <label for="jenis_kelamin"></label>
                 <?php $jk = $siswa['jenis_kelamin']; ?>
-                <select class="form-control" name="agama">
+                <select class="form-control" name="jenis_kelamin">
                     <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
                     <option <?php echo ($jk == 'Perempuan') ? "selected": "" ?>>Perempuan</option>
                 </select>

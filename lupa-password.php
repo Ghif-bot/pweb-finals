@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,13 +51,13 @@
                                     <h1 class="h2 text-gray-900 mb-5">Forgot Password</h1>
                                         <br>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="../pweb-ghif/php/check_email.php"  method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user mb-2"
+                                            <input type="email" name="email" class="form-control form-control-user mb-2"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Email Address..." required>
                                         </div>
-                                        <a href="new-password.php" class="btn btn-primary btn-user btn-block">
+                                        <a type ="submit" class="btn btn-primary btn-user btn-block" name="checkEmail">
                                             Forgot Password
                                         </a>               
                                     </form>

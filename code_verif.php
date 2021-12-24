@@ -46,25 +46,27 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center success">
-                                           <div class="p text-gray-900 mb-5">Please create a new password that you <br> don't use on any other site</div>
+                                         <div class="p text-gray-900 mb-5">We've sent a password reset opt to your <br> email - <?php echo $_SESSION['email']; ?></div>
+                                          <!-- Error Msg -->
+                                          <?php if (isset($_SESSION['msg'])) {  ?>
+
+                                        <div class="err" id="closeMsg">
+                                        <div><?php echo $_SESSION['msg']; ?></div>
+                                               <i class="fas fa-times"></i>
+                                         </div>
+                                          <?php
+                                        unset($_SESSION['msg']);
+                                       }
+                                     ?>
                                     </div>
-                                    <form class="user" action="./php/new-password.php">
-                                          <div class="form-group">
-                                            <input type="hidden" name="email" class="form-control form-control-user mb-2"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." required>
-                                        </div>
+                                    <form class="user" action="./php/verification.php">
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputNew-Password" placeholder="New-Password..." required>
+                                            <input type="code" name ="code" class="form-control form-control-user"
+                                                id="exampleInpuCode" placeholder="Input Code" required>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" name="cpassword" class="form-control form-control-user"
-                                                id="exampleInputRepeat-Password" placeholder="Repeat-Password"  required>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block"name="change">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="verification">
                                     New Password
-                                </button>
+                                        </button>
                                     </form>
                                 </div>
                             </div>

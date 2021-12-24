@@ -21,11 +21,10 @@ if(isset($_POST['daftar'])){
     // apakah query simpan berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-           header("location:../admin-utama.php?pesan=berhasil");
-     
+        header("location: ../siswa-10.php");
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-         header("location:../admin-utama.php?pesan=gagal");
+        die("Gagal menyimpan perubahan...");
     }
  
  
