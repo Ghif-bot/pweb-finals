@@ -277,9 +277,9 @@
                                                      <?php
                                                     $sql="SELECT * FROM ortu";
                                                     $query = mysqli_query($connect, $sql);
-                                                    $jumlah_wali = mysqli_num_rows($query);
+                                                    $jumlah_walis = mysqli_num_rows($query);
                                                     
-                                                    echo "$jumlah_wali Wali";
+                                                    echo "$jumlah_walis Wali";
                                                  
                                                 ?>
                                                 

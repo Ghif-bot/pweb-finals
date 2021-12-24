@@ -218,8 +218,6 @@
                                         echo "<td>".$orangtua['alamat']."</td>";
                                         echo "<td>".$orangtua['no_hp']."</td>";
                                         echo "<td>";
-                                        echo "<a href='form-edit-ortu.php?id=".$orangtua['id']."'>Edit</a> | ";
-                                        echo "<a href='./php/hapus.php?id=".$orangtua['id']."'>Hapus</a>";
                                         echo "</td>";
                                         echo "</tr>";
                                         }

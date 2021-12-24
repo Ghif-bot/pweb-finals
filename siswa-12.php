@@ -223,7 +223,7 @@
                                         echo "<td>".$siswa['agama']."</td>";
                                         echo "<td>".$siswa['no_hp']."</td>";
                                         echo "<td>";
-                                        echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                        echo "<a href='form-edit-siswa.php?id=".$siswa['id']."'>Edit</a> | ";
                                         echo "<a href='.php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
                                         echo "</td>";
                                         echo "</tr>";

@@ -4,8 +4,8 @@ session_start();
 include 'config.php';
 
     $id = $_POST['id'];
-    $nama = $_POST['nama'];
-    $id_siswa = $_POST[''];
+    $nama = $_POST['name'];
+    $id_siswa = $_POST['id_siswa'];
 
     // echo $id. $nama. $id_siswa;
 
