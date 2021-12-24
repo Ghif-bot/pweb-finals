@@ -42,6 +42,7 @@
 
 <body id="page-top">
        <?php 
+       include './php/config.php';
         session_start();
         if(!isset($_SESSION['id'])){
             header("location:./index.php");
@@ -186,11 +187,11 @@
                     </ul>
 
                 </nav>
-                 <div class="container-fluid">
-                     <div class="card shadow mb-4">
-                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
-                            <div class="card-body">
-                             <form action="../pweb-ghif/php/proses-pendaftaran.php"  method="POST">
+            <div class="container-fluid">
+                <div class="card shadow mb-4">
+                    <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Guru</h3>
+                        <div class="card-body">
+                             <form action="./php/proses-pendaftaran.php?pesan=guru"  method="POST">
             <div class="form-group">
                 <label for ="nip"></label>
                 <input type="text" class="form-control" name="nip" placeholder="NIP"/>

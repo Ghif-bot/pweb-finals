@@ -275,7 +275,7 @@
                                                 Wali Murid</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                      <?php
-                                                    $sql="SELECT * FROM orangtua";
+                                                    $sql="SELECT * FROM ortu";
                                                     $query = mysqli_query($connect, $sql);
                                                     $jumlah_wali = mysqli_num_rows($query);
                                                     

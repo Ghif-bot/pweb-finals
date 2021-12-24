@@ -37,10 +37,10 @@ if(isset($_POST['simpan_ortu'])){
     // ambil data dari formulir
     $id = $_POST['id'];
     $nama = $_POST['nama'];
-    $id_siswa=$_POST['id_siswa'];
+    $alamat =$_POST['id_siswa'];
     ;
     // buat query update
-    $sql = "UPDATE ortu SET nama='$nama', id_siswa='$alamat', no_hp='$nohp' WHERE id=$id";
+    $sql = "UPDATE ortu SET nama='$nama', nama_ortu='$nama_ortu',alamat='$alamat', no_hp='$nohp' WHERE id=$id";
     $query = mysqli_query($connect, $sql);
 
     
