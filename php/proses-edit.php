@@ -37,11 +37,10 @@ if(isset($_POST['simpan_ortu'])){
     // ambil data dari formulir
     $id = $_POST['id'];
     $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $nohp = $_POST['no_hp'];
+    $id_siswa=$_POST['id_siswa'];
     ;
     // buat query update
-    $sql = "UPDATE orang_tua SET nama='$nama', alamat='$alamat', no_hp='$nohp' WHERE id=$id";
+    $sql = "UPDATE ortu SET nama='$nama', id_siswa='$alamat', no_hp='$nohp' WHERE id=$id";
     $query = mysqli_query($connect, $sql);
 
     
@@ -59,11 +58,10 @@ if(isset($_POST['simpan_ortu'])){
     die("Akses dilarang...");
 }
 
-if(isset($_POST['simpan_ortu'])){
+if(isset($_POST['simpan_guru'])){
  
     // ambil data dari formulir
      $id = $_POST['id'];
-    $nis = $_POST['nip'];
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
     $jk = $_POST['jenis_kelamin'];
@@ -73,14 +71,14 @@ if(isset($_POST['simpan_ortu'])){
 
     ;
     // buat query update
-    $sql = "UPDATE orang_tua SET nama='$nama', alamat='$alamat', no_hp='$nohp' WHERE id=$id";
+    $sql = "UPDATE guru SET nama='$nama', alamat='$alamat', jenis_kelamin='$jk', agama='$agama', mapel='$mapel', no_hp='$nohp' WHERE id=$id";
     $query = mysqli_query($connect, $sql);
 
     
     // apakah query update berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman list-siswa.php
-        header("location: ../admin-orangtua.php");
+        header("location: ../admin-guru.php");
     } else {
         // kalau gagal tampilkan pesan
         die("Gagal menyimpan perubahan...");

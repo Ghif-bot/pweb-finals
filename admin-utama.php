@@ -49,7 +49,7 @@
         }
         $id = $_SESSION['id'];
         $query = mysqli_query($connect, "select * from user where id_user = '$id'");
-        $fill = mysqli_fetch_array($query)
+        $fill = mysqli_fetch_array($query);
     
     ?>
     <!-- Page Wrapper -->
@@ -273,7 +273,17 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Wali Murid</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">62 Wali</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                     <?php
+                                                    $sql="SELECT * FROM orangtua";
+                                                    $query = mysqli_query($connect, $sql);
+                                                    $jumlah_wali = mysqli_num_rows($query);
+                                                    
+                                                    echo "$jumlah_wali Wali";
+                                                 
+                                                ?>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -290,7 +300,15 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">100 Guru</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"> 
+                                                    <?php
+                                                    $sql="SELECT * FROM guru";
+                                                    $query = mysqli_query($connect, $sql);
+                                                    $jumlah_guru = mysqli_num_rows($query);
+                                                    
+                                                    echo "$jumlah_guru Guru";
+                                                 
+                                                ?></div>
                                                 </div>
                                             </div>
                                         </div>

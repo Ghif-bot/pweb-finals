@@ -50,7 +50,7 @@
         }
         $id = $_SESSION['id'];
         $query = mysqli_query($connect, "select * from user where id_user = '$id'");
-        $fill = mysqli_fetch_array($query)
+        $fill = mysqli_fetch_array($query);
     
     ?>
     <!-- Page Wrapper -->
@@ -213,7 +213,7 @@
                                         </tr>
                                     </thead> 
                                      <tbody>
-                                         -- <php
+                                         <?php
                                             $sql = "SELECT * FROM guru"; 
                                             $query = mysqli_query($connect, $sql);
                                             while($guru = mysqli_fetch_array($query)){
@@ -231,7 +231,7 @@
                                         echo "</td>";
                                         echo "</tr>";
                                         }
-                                        -->
+                                        ?>
                                     </tbody>                               
                                 </table>
                             </div>

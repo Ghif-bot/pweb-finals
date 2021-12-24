@@ -61,7 +61,16 @@ if( mysqli_num_rows($query) < 1 ){
 </head>
 
 <body id="page-top">
-    <? session_start()?>
+       <?php 
+        session_start();
+        if(!isset($_SESSION['id'])){
+            header("location:./index.php");
+        }
+        $id = $_SESSION['id'];
+        $query = mysqli_query($connect, "select * from user where id_user = '$id'");
+        $fill = mysqli_fetch_array($query);
+    
+    ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -184,7 +193,7 @@ if( mysqli_num_rows($query) < 1 ){
                           <div class="nav-item dropdown no-arrow">
                          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $fill['name']?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>

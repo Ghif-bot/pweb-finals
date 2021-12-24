@@ -50,7 +50,7 @@
         }
         $id = $_SESSION['id'];
         $query = mysqli_query($connect, "select * from user where id_user = '$id'");
-        $fill = mysqli_fetch_array($query)
+        $fill = mysqli_fetch_array($query);
     
     ?>
     <!-- Page Wrapper -->
@@ -193,8 +193,8 @@
                          <br>
                           <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
                         <h1 class="h3 mb-0 text-gray-800 ">List Wali Kelas</h1>
-                        <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Tambah Guru</a>
+                        <a href="form-tambah-wali.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Tambah Wali</a>
                     </div>
                                  
                             <div class="card-body">
@@ -202,19 +202,21 @@
                                 <table class="table table-no-border" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-dark">
                                          <tr>
-                                            <th scope="col">Nama</th>                                     
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Nama Siswa</th>                                     
                                             <th scope="col">Alamat</th>
                                             <th scope="col">No. Hp</th>
                                             <th scope="col">Tindakan</th>
                                         </tr>
                                     </thead> 
                                      <tbody>
-                                         -- <php
-                                            $sql = "SELECT * FROM orang_tua"; 
+                                        <?php
+                                            $sql = "SELECT * FROM ortu join siswa_10 on siswa_10.id = ortu.id_siswa"; 
                                             $query = mysqli_query($connect, $sql);
                                             while($orangtua = mysqli_fetch_array($query)){
-                                         echo "<tr>";
-                                         echo "<td>".$orangtua['nama']."</td>";                                   
+                                        echo "<tr>";
+                                        echo "<td>".$orangtua['nama_ortu']."</td>";
+                                        echo "<td>".$orangtua['nama']."</td>";                                   
                                         echo "<td>".$orangtua['alamat']."</td>";
                                         echo "<td>".$orangtua['no_hp']."</td>";
                                         echo "<td>";
@@ -223,7 +225,7 @@
                                         echo "</td>";
                                         echo "</tr>";
                                         }
-                                        -->
+                                        ?>
                                     </tbody>                               
                                 </table>
                             </div>

@@ -41,7 +41,16 @@
 </head>
 
 <body id="page-top">
-    <? session_start()?>
+       <?php 
+        session_start();
+        if(!isset($_SESSION['id'])){
+            header("location:./index.php");
+        }
+        $id = $_SESSION['id'];
+        $query = mysqli_query($connect, "select * from user where id_user = '$id'");
+        $fill = mysqli_fetch_array($query);
+    
+    ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -164,7 +173,7 @@
                           <div class="nav-item dropdown no-arrow">
                          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $fill['name']?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -183,8 +192,8 @@
                             <div class="card-body">
                              <form action="../pweb-ghif/php/proses-pendaftaran.php"  method="POST">
             <div class="form-group">
-                <label for="nis"></label>
-                <input type="text" class="form-control" name="nis" placeholder="NIS"/>
+                <label for ="nip"></label>
+                <input type="text" class="form-control" name="nip" placeholder="NIP"/>
             </div>
              <div class="form-group">
                 <label for="nama"></label>
@@ -212,17 +221,18 @@
                      <option>Konghucu</option>
                 </select>
             </div>
+             <div class="form-group">
+                <label for="mapel"></label>
+                <input type="text" class="form-control" name="mapel" placeholder="Mapel" />
+            </div>
             <div class="form-group">
                 <label for="no_hp"></label>
                 <input type="text" class="form-control" name="no_hp" placeholder="No Hp" />
             </div>
-             <div class="form-group">
-                <label for="kelas"></label>
-                <input type="text" class="form-control" name="kelas" placeholder="Kelas" />
-            </div>
+            
             <br>
             <div class="form-group">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Daftar" name="daftar" />
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Daftar" name="daftar-guru" />
             </div>
         </form>
                         </div>

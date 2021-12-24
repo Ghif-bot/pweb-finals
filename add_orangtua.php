@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>DAFTAR ORTU</title>
 
     <!-- Custom fonts for this template-->
     <link href="./admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,7 +28,7 @@
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <?php 
-        include("./php/config.php");
+        include './php/config.php';
         session_start();
         if(!isset($_SESSION['id'])){
             header("location:./index.php");
@@ -53,7 +53,7 @@
                                         <br>
                                         <br>
                             </div>
-                            <form class="user"  method="post" action="./php/check_siswa.php">
+                            <form class="user"  method="post" action="./php/check_wali.php">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputEmail" name="id"
                                         placeholder="id" value="<?php echo $id; ?>">
@@ -63,47 +63,20 @@
                                         placeholder="nama" value="<?php echo $fill['name']; ?>" require>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nis"
-                                        placeholder="NIS">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="alamat"
-                                        placeholder="Alamat">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <select name="agama" class="form-control form-control-user" id="agama">
-                                            <option value="" disabled selected>Agama: </option>
-                                            <option value="islam">Islam</option>
-                                            <option value ="kristen">Kristen</option>
-                                            <option value ="katolik">Katolik</option>
-                                            <option value ="hindu">Hindu</option>
-                                            <option value= "budha">Budha</option>
-                                            <option value ="kongkuchu">Konghuchu</option>
-                                        </select> 
+                                    <select class="form-control form-control-user" name="id_siswa" list="category_name" id="category_name">
+                                        <?php
+                                        $querry = mysqli_query($connect, "select * from siswa_10");
+
+                                        while($list = mysqli_fetch_array($querry)){
+                                            ?>
+                                            <option value="<?= $list['id'];?>"><?=$list['nama']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <select name="jk" class="form-control form-control-user" id="jk">
-                                            <option value="" disabled selected>Jenis Kelamin: </option>
-                                            <option value="laki-laki">Laki - Laki</option>
-                                            <option value="perempuan">Perempuan</option>
-                                        </select> 
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nohape"
-                                        placeholder="Nomor Hape">
-                                </div>
-                                 <div class="form-group">
-                                    <select name="kelas" class="form-control form-control-user" id="kelas">
-                                        <option value="" disabled selected>Kelas: </option>
-                                        <option value="10">10</option>
-                                        <option value ="11">11</option>
-                                        <option value ="12">12</option>
-                                    </select> 
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block" name>
-                                    Masuk Daftar Siswa
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Masuk Daftar Orang Tua
                                 </button>
                             </form>
                             <hr>
