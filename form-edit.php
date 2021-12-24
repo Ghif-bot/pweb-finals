@@ -238,6 +238,10 @@ if( mysqli_num_rows($query) < 1 ){
                 <label for="no_hp"></label>
                 <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $siswa['no_hp'] ?>" />
             </div>
+            <div class="form-group">
+                <label for="kelas"></label>
+                <input type="text" class="form-control" name="kelas" placeholder="No Hp" value="<?php echo $siswa['kelas'] ?>" />
+            </div>
             <br>
            
             <div class="form-group">

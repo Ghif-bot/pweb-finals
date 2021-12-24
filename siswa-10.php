@@ -193,7 +193,6 @@
                                 <table class="table table-no-border" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-dark">
                                          <tr>
-                                            <th scope="col">No</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">NIS</th>
                                             <th scope="col">Alamat</th>
@@ -205,11 +204,10 @@
                                     </thead> 
                                      <tbody>
                                         <?php
-                                            $sql = "SELECT * FROM siswa_10";
+                                            $sql = "SELECT * FROM siswa_10 where kelas='10'"; 
                                             $query = mysqli_query($connect, $sql);
                                             while($siswa = mysqli_fetch_array($query)){
                                          echo "<tr>";
-                                         echo "<td>".$siswa['id']."</td>";
                                          echo "<td>".$siswa['nama']."</td>";
                                          echo "<td>".$siswa['nis']."</td>";                                     
                                         echo "<td>".$siswa['alamat']."</td>";

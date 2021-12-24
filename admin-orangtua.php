@@ -1,3 +1,5 @@
+<?php include('./php/config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +61,7 @@
                  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     
                  <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 align-items-center justify-content-center mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Daftar Wali</h1>
                     </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -177,57 +179,54 @@
                     </ul>
 
                 </nav>
-                 <div class="container-fluid">
+                <div class="container-fluid">
                      <div class="card shadow mb-4">
-                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
+                         <br>
+                          <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
+                        <h1 class="h3 mb-0 text-gray-800 ">List Wali Kelas</h1>
+                        <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
+                    </div>
+                                 
                             <div class="card-body">
-                             <form action="../pweb-ghif/php/proses-pendaftaran.php"  method="POST">
-            <div class="form-group">
-                <label for="nis"></label>
-                <input type="text" class="form-control" name="nis" placeholder="NIS"/>
-            </div>
-             <div class="form-group">
-                <label for="nama"></label>
-                <input type="text" class="form-control" name="nama" placeholder="Nama lengkap"/>
-            </div>
-            <div class="form-group">
-                <label for="alamat"></label>
-                <textarea class="form-control" name="alamat" placeholder="Alamat"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="jenis_kelamin"></label>
-                <select class="form-control" name="jenis_kelamin" placeholder="Jenis Kelamin">
-                    <option>Laki-Laki</option>
-                    <option>Perempuan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="agama"></label>
-                <select class="form-control" name="agama" >
-                    <option>Islam</option>
-                    <option>Kristen</option>
-                    <option>Hindu</option>
-                    <option>Budha</option>
-                    <option>Katolik</option>
-                     <option>Konghucu</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="no_hp"></label>
-                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" />
-            </div>
-             <div class="form-group">
-                <label for="kelas"></label>
-                <input type="text" class="form-control" name="kelas" placeholder="Kelas" />
-            </div>
-            <br>
-            <div class="form-group">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Daftar" name="daftar" />
-            </div>
-        </form>
+                            <div class="table-responsive">
+                                <table class="table table-no-border" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="thead-dark">
+                                         <tr>
+                                            <th scope="col">Nama</th>                                     
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Jenis Kelamin</th>
+                                            <th scope="col">Agama</th>
+                                            <th scope="col">No. Hp</th>
+                                            <th scope="col">Tindakan</th>
+                                        </tr>
+                                    </thead> 
+                                     <tbody>
+                                         <!-- <php
+                                            $sql = "SELECT * FROM siswa_10 where kelas='10'"; 
+                                            $query = mysqli_query($connect, $sql);
+                                            while($siswa = mysqli_fetch_array($query)){
+                                         echo "<tr>";
+                                         echo "<td>".$siswa['nama']."</td>";
+                                         echo "<td>".$siswa['nis']."</td>";                                     
+                                        echo "<td>".$siswa['alamat']."</td>";
+                                        echo "<td>".$siswa['jenis_kelamin']."</td>";
+                                        echo "<td>".$siswa['agama']."</td>";
+                                        echo "<td>".$siswa['no_hp']."</td>";
+                                        echo "<td>";
+                                        echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                        echo "<a href='./php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                        }
+                                        ?> -->
+                                    </tbody>                               
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content --> 
@@ -237,6 +236,8 @@
             <!-- End of Main Content -->
 
         </div>
+        
+            
         <!-- End of Content Wrapper -->
 
     </div>

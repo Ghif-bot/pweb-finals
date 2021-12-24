@@ -12,11 +12,12 @@ if(isset($_POST['simpan'])){
     $jk = $_POST['jenis_kelamin'];
     $agama = $_POST['agama'];
     $nohp = $_POST['no_hp'];
- 
+    $kelas = $_POST['kelas'];
     // buat query update
-    $sql = "UPDATE siswa_10 SET nama='$nama', alamat='$alamat', jenis_kelamin='$jk', agama='$agama', no_hp='$nohp' WHERE id=$id";
+    $sql = "UPDATE siswa_10 SET nama='$nama', alamat='$alamat', jenis_kelamin='$jk', agama='$agama', no_hp='$nohp',kelas=$kelas WHERE id=$id";
     $query = mysqli_query($connect, $sql);
- 
+
+    
     // apakah query update berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman list-siswa.php

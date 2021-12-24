@@ -1,3 +1,4 @@
+<?php include('./php/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -193,7 +194,16 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                Siswa Kelas 10</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">20 Siswa</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php
+                                                    $sql="SELECT * FROM siswa_10 where kelas='10'";
+                                                    $query = mysqli_query($connect, $sql);
+                                                    $jumlah_siswa = mysqli_num_rows($query);
+                                                    
+                                                    echo "$jumlah_siswa Siswa";
+                                                 
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -207,7 +217,16 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                Siswa Kelas 11</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">21 Siswa</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <?php
+                                                    $sql="SELECT * FROM siswa_10 where kelas='11'";
+                                                    $query = mysqli_query($connect, $sql);
+                                                    $jumlah_siswa = mysqli_num_rows($query);
+                                                    
+                                                    echo "$jumlah_siswa Siswa";
+                                                 
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -221,7 +240,16 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                Siswa Kelas 12</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">20 Siswa</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php
+                                                    $sql="SELECT * FROM siswa_10 where kelas='12'";
+                                                    $query = mysqli_query($connect, $sql);
+                                                    $jumlah_siswa = mysqli_num_rows($query);
+                                                    
+                                                    echo "$jumlah_siswa Siswa";
+                                                 
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +281,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 ml-3 font-weight-bold text-gray-800">100 Guru</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">100 Guru</div>
                                                 </div>
                                             </div>
                                         </div>

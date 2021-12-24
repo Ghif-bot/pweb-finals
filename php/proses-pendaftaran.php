@@ -12,10 +12,11 @@ if(isset($_POST['daftar'])){
     $alamat = $_POST['alamat'];
     $jk = $_POST['jenis_kelamin'];
     $agama = $_POST['agama'];
-    $nohp = $_POST['no_hp']; 
+    $nohp = $_POST['no_hp'];
+    $kelas = $_POST['kelas']; 
  
     // buat query
-    $sql = "INSERT INTO siswa_10 (nis, nama, alamat, jenis_kelamin, agama, no_hp) VALUE ('$nis','$nama', '$alamat', '$jk', '$agama', '$nohp')";
+    $sql = "INSERT INTO siswa_10 (nis, nama, alamat, jenis_kelamin, agama, no_hp,kelas) VALUE ('$nis','$nama', '$alamat', '$jk', '$agama', '$nohp','$kelas')";
     $query = mysqli_query($connect, $sql);
  
     // apakah query simpan berhasil?
