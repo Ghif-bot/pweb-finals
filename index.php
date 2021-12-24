@@ -78,7 +78,7 @@
                                         
                                     </form>
                                     <div class="text-center">
-                                        <a class="small" href="lupa-password.php">Forgot Password?</a>
+                                        <p class="small" style="color: black;">Belum punya akun? <span><a href="./register.php">Create Account</a></span></p>
                                     </div>
                                 </div>
                             </div>

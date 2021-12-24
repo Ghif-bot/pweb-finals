@@ -21,7 +21,7 @@ if(isset($_POST['simpan'])){
     // apakah query update berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman list-siswa.php
-        header("location: ../siswa-10.php");
+        header("location: ../admin-utama.php");
     } else {
         // kalau gagal tampilkan pesan
         die("Gagal menyimpan perubahan...");
@@ -31,5 +31,65 @@ if(isset($_POST['simpan'])){
 } else {
     die("Akses dilarang...");
 }
+
+if(isset($_POST['simpan_ortu'])){
+ 
+    // ambil data dari formulir
+    $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $nohp = $_POST['no_hp'];
+    ;
+    // buat query update
+    $sql = "UPDATE orang_tua SET nama='$nama', alamat='$alamat', no_hp='$nohp' WHERE id=$id";
+    $query = mysqli_query($connect, $sql);
+
+    
+    // apakah query update berhasil?
+    if( $query ) {
+        // kalau berhasil alihkan ke halaman list-siswa.php
+        header("location: ../admin-orangtua.php");
+    } else {
+        // kalau gagal tampilkan pesan
+        die("Gagal menyimpan perubahan...");
+    }
+ 
+ 
+} else {
+    die("Akses dilarang...");
+}
+
+if(isset($_POST['simpan_ortu'])){
+ 
+    // ambil data dari formulir
+     $id = $_POST['id'];
+    $nis = $_POST['nip'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $jk = $_POST['jenis_kelamin'];
+    $agama = $_POST['agama'];
+    $mapel = $_POST['mapel']; 
+    $nohp = $_POST['no_hp'];
+
+    ;
+    // buat query update
+    $sql = "UPDATE orang_tua SET nama='$nama', alamat='$alamat', no_hp='$nohp' WHERE id=$id";
+    $query = mysqli_query($connect, $sql);
+
+    
+    // apakah query update berhasil?
+    if( $query ) {
+        // kalau berhasil alihkan ke halaman list-siswa.php
+        header("location: ../admin-orangtua.php");
+    } else {
+        // kalau gagal tampilkan pesan
+        die("Gagal menyimpan perubahan...");
+    }
+ 
+ 
+} else {
+    die("Akses dilarang...");
+}
+ 
  
 ?>

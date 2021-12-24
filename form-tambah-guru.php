@@ -1,23 +1,3 @@
-<?php
-include('./php/config.php');
-
-if( !isset($_GET['id']) ){
-    header('Location: ../admin-utama.php');
-}
-//ambil id dari query string
-$id = $_GET['id'];
-
-// buat query untuk ambil data dari database
-$sql = "SELECT * FROM siswa_10 WHERE id=$id";
-$query = mysqli_query($connect, $sql);
-$siswa = mysqli_fetch_assoc($query);
-
-// jika data yang di-edit tidak ditemukan
-if( mysqli_num_rows($query) < 1 ){
-    die("data tidak ditemukan...");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -201,56 +181,53 @@ if( mysqli_num_rows($query) < 1 ){
                      <div class="card shadow mb-4">
                      <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
                             <div class="card-body">
-                                <form action="./php/proses-edit.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
-
+                             <form action="../pweb-ghif/php/proses-pendaftaran.php"  method="POST">
             <div class="form-group">
+                <label for="nis"></label>
+                <input type="text" class="form-control" name="nis" placeholder="NIS"/>
+            </div>
+             <div class="form-group">
                 <label for="nama"></label>
-                <input type="text" class="form-control" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
+                <input type="text" class="form-control" name="nama" placeholder="Nama lengkap"/>
             </div>
             <div class="form-group">
                 <label for="alamat"></label>
-                <textarea class="form-control" name="alamat"><?php echo $siswa['alamat'] ?></textarea>
+                <textarea class="form-control" name="alamat" placeholder="Alamat"></textarea>
             </div>
             <div class="form-group">
                 <label for="jenis_kelamin"></label>
-                <?php $jk = $siswa['jenis_kelamin']; ?>
-                <select class="form-control" name="jenis_kelamin">
-                    <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
-                    <option <?php echo ($jk == 'Perempuan') ? "selected": "" ?>>Perempuan</option>
+                <select class="form-control" name="jenis_kelamin" placeholder="Jenis Kelamin">
+                    <option>Laki-Laki</option>
+                    <option>Perempuan</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="agama"></label>
-                <?php $agama = $siswa['agama']; ?>
-                <select class="form-control" name="agama">
-                    <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
-                    <option <?php echo ($agama == 'Kristen') ? "selected": "" ?>>Kristen</option>
-                    <option <?php echo ($agama == 'Hindu') ? "selected": "" ?>>Hindu</option>
-                    <option <?php echo ($agama == 'Budha') ? "selected": "" ?>>Budha</option>
-                    <option <?php echo ($agama == 'Katolik') ? "selected": "" ?>>Katolik</option>
-                    <option <?php echo ($agama == 'Konghucu') ? "selected": "" ?>>Konghucu</option>
+                <select class="form-control" name="agama" >
+                    <option>Islam</option>
+                    <option>Kristen</option>
+                    <option>Hindu</option>
+                    <option>Budha</option>
+                    <option>Katolik</option>
+                     <option>Konghucu</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="no_hp"></label>
-                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $siswa['no_hp'] ?>" />
+                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" />
             </div>
-            <div class="form-group">
+             <div class="form-group">
                 <label for="kelas"></label>
-                <input type="text" class="form-control" name="kelas" placeholder="Kelas" value="<?php echo $siswa['kelas'] ?>" />
+                <input type="text" class="form-control" name="kelas" placeholder="Kelas" />
             </div>
             <br>
-           
             <div class="form-group">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Daftar" name="daftar" />
             </div>
         </form>
-                                
-                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content --> 

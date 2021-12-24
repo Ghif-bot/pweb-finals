@@ -42,7 +42,16 @@
 </head>
 
 <body id="page-top">
-    <? session_start()?>
+    <?php 
+        session_start();
+        if(!isset($_SESSION['id'])){
+            header("location:./index.php");
+        }
+        $id = $_SESSION['id'];
+        $query = mysqli_query($connect, "select * from user where id_user = '$id'");
+        $fill = mysqli_fetch_array($query)
+    
+    ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -57,10 +66,10 @@
             <div id="content">
 
                 <!-- Topbar -->
-         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     
                  <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 align-items-center justify-content-center mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Siswa</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashbord</h1>
                     </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -165,7 +174,7 @@
                           <div class="nav-item dropdown no-arrow">
                          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $fill['name']?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>

@@ -35,7 +35,7 @@
                 <!-- Nested Row within Card Body -->
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-block">
-                        <img src="./img/google.jpg" width="500" height="600">
+                        <img src="./img/google.jpg" width="500" height="650">
                     </div>
                     <div class="col-lg-7">
                         <div class="p-5">
@@ -44,47 +44,55 @@
                                         <br>
                                         <br>
                             </div>
-                            <form class="user"  method="post" action="./php/check_regis.php">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" name="first_name"
-                                            placeholder="First Name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" name="last_name"
-                                            placeholder="Last Name">
-                                    </div>
+                            <form class="user"  method="post" action="./php/check_siswa.php">
+                            <div class="form-group">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nis"
+                                        placeholder="NIS">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email"
-                                        placeholder="Email Address">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="alamat"
+                                        placeholder="Alamat">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" name="password"
-                                            id="exampleInputPassword" placeholder="Password">
+                                        <select name="agama" class="form-control form-control-user" id="agama">
+                                            <option value="" disabled selected>Agama: </option>
+                                            <option value="islam">Islam</option>
+                                            <option value ="kristen">Kristen</option>
+                                            <option value ="katolik">Katolik</option>
+                                            <option value ="hindu">Hindu</option>
+                                            <option value= "budha">Budha</option>
+                                            <option value ="kongkuchu">Konghuchu</option>
+                                        </select> 
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" name="repeat-password"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <select name="jk" class="form-control form-control-user" id="jk">
+                                            <option value="" disabled selected>Jenis Kelamin: </option>
+                                            <option value="laki-laki">Laki - Laki</option>
+                                            <option value="perempuan">Perempuan</option>
+                                        </select> 
                                     </div>
                                 </div>
-                                
                                 <div class="form-group">
-                                    <select name="role" class="form-control form-control-user" id="role">
-                                        <option value="" disabled selected>Daftar Sebagai: </option>
-                                        <option value="1">Siswa</option>
-                                        <option value="3">Wali Murid</option>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nohape"
+                                        placeholder="Nomor Hape">
+                                </div>
+                                 <div class="form-group">
+                                    <select name="kelas" class="form-control form-control-user" id="kelas">
+                                        <option value="" disabled selected>Kelas: </option>
+                                        <option value="10">10</option>
+                                        <option value ="11">11</option>
+                                        <option value ="12">12</option>
                                     </select> 
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                    Masuk Daftar Siswa
                                 </button>
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <p class="small" style="color: black;">Sudah punya akun? <span><a href="./register.php">Login</a></span></p>
-                            </div>
                         </div>
                     </div>
                 </div>

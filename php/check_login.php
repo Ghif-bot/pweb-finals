@@ -15,13 +15,13 @@ if($check > 0){
     if($data['roles']=="0"){
         $_SESSION['email'] = $email;
         $_SESSION['roles'] = 0;
-        $_SESSION['name'] = mysqli_query($connect, "select name from user where email='$email'");
+        $_SESSION['id'] = $data['id_user'];
         header("location:../admin-utama.php?pesan=berhasil");
     }
     elseif ($data['roles']=="1"){
         $_SESSION['email'] = $email;
         $_SESSION['roles'] = 1;
-        $_SESSION['name'] = mysqli_query($connect, "select name from user where email='$email'");
+        $_SESSION['id'] = mysqli_query($connect, "select id_user from user where email='$email'");
         header("location:../siswa_utama.php?pesan=berhasil");
     }
      elseif ($data['roles']=="2"){

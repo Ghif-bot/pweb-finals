@@ -6,7 +6,7 @@ include("config.php");
 if(isset($_POST['daftar'])){
  
     // ambil data dari formulir
-  $id = $_POST['id'];
+    $id = $_POST['id'];
     $nis = $_POST['nis'];
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
@@ -22,7 +22,7 @@ if(isset($_POST['daftar'])){
     // apakah query simpan berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
-        header("location: ../siswa-10.php");
+        header("location: ../admin-utama.php");
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
         die("Gagal menyimpan perubahan...");
@@ -32,5 +32,63 @@ if(isset($_POST['daftar'])){
 } else {
     die("Akses dilarang...");
 }
+
+if(isset($_POST['daftar-ortu'])){
+ 
+    // ambil data dari formulir
+  $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $nohp = $_POST['no_hp'];
+ 
+    // buat query
+    $sql = "INSERT INTO orangtua (nama, alamat, no_hp) VALUE ('$nama', '$alamat', '$nohp')";
+    $query = mysqli_query($connect, $sql);
+ 
+    // apakah query simpan berhasil?
+    if( $query ) {
+        // kalau berhasil alihkan ke halaman index.php dengan status=sukses
+        header("location: ../admin-orangtua.php");
+    } else {
+        // kalau gagal alihkan ke halaman indek.php dengan status=gagal
+        die("Gagal menyimpan perubahan...");
+    }
+ 
+ 
+} else {
+    die("Akses dilarang...");
+}
+
+if(isset($_POST['daftar-guru'])){
+ 
+    // ambil data dari formulir
+  $id = $_POST['id'];
+    $nis = $_POST['nip'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $jk = $_POST['jenis_kelamin'];
+    $agama = $_POST['agama'];
+    $mapel = $_POST['mapel']; 
+    $nohp = $_POST['no_hp'];
+
+ 
+    // buat query
+    $sql = "INSERT INTO guru (nip, nama, alamat, jenis_kelamin, agama,mapel,no_hp) VALUE ('$nis','$nama', '$alamat', '$jk', '$agama', '$mapel','$nohp')";
+    $query = mysqli_query($connect, $sql);
+ 
+    // apakah query simpan berhasil?
+    if( $query ) {
+        // kalau berhasil alihkan ke halaman index.php dengan status=sukses
+        header("location: ../admin-guru.php");
+    } else {
+        // kalau gagal alihkan ke halaman indek.php dengan status=gagal
+        die("Gagal menyimpan perubahan...");
+    }
+ 
+ 
+} else {
+    die("Akses dilarang...");
+}
+ 
  
 ?>

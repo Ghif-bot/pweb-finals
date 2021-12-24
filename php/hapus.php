@@ -9,11 +9,11 @@ if( isset($_GET['id']) ){
  
     // buat query hapus
     $sql = "DELETE FROM siswa_10 WHERE id=$id";
-    $query = mysqli_query($db, $sql);
+    $query = mysqli_query($connect, $sql);
  
     // apakah query hapus berhasil?
     if( $query ){
-        header('Location: list-siswa.php');
+        header('Location: ../admin-utama.php');
     } else {
         die("gagal menghapus...");
     }

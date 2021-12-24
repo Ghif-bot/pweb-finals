@@ -49,12 +49,12 @@
                     <span>Orang Tua</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./admin-tambah.php">
+                <a class="nav-link" href="./admin-guru.php">
                     <i class="fas fa-fw fa-user"></i>
                 <span>Guru</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./admin-tambah.php">
+                <a class="nav-link" href="./admin-bayar.php">
                     <i class="fas fa-fw fa-coins"></i>
                     <span>Pembayaran</span></a>
             </li>

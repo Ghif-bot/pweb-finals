@@ -1,16 +1,18 @@
 <?php
 include('./php/config.php');
 
+// kalau tidak ada id di query string
 if( !isset($_GET['id']) ){
-    header('Location: ../admin-utama.php');
+    header('Location: ../admin-orangtua.php');
 }
+
 //ambil id dari query string
 $id = $_GET['id'];
 
 // buat query untuk ambil data dari database
-$sql = "SELECT * FROM siswa_10 WHERE id=$id";
+$sql = "SELECT * FROM orangtua WHERE id=$id";
 $query = mysqli_query($connect, $sql);
-$siswa = mysqli_fetch_assoc($query);
+$orangtua= mysqli_fetch_assoc($query);
 
 // jika data yang di-edit tidak ditemukan
 if( mysqli_num_rows($query) < 1 ){
@@ -199,51 +201,27 @@ if( mysqli_num_rows($query) < 1 ){
                 </nav>
                  <div class="container-fluid">
                      <div class="card shadow mb-4">
-                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Siswa</h3>
+                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Wali</h3>
                             <div class="card-body">
                                 <form action="./php/proses-edit.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
+            <input type="hidden" name="id" value="<?php echo $orangtua['id'] ?>" />
 
             <div class="form-group">
                 <label for="nama"></label>
-                <input type="text" class="form-control" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
+                <input type="text" class="form-control" name="nama" placeholder="nama lengkap" value="<?php echo $orangtua['nama'] ?>" />
             </div>
             <div class="form-group">
                 <label for="alamat"></label>
-                <textarea class="form-control" name="alamat"><?php echo $siswa['alamat'] ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="jenis_kelamin"></label>
-                <?php $jk = $siswa['jenis_kelamin']; ?>
-                <select class="form-control" name="jenis_kelamin">
-                    <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
-                    <option <?php echo ($jk == 'Perempuan') ? "selected": "" ?>>Perempuan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="agama"></label>
-                <?php $agama = $siswa['agama']; ?>
-                <select class="form-control" name="agama">
-                    <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
-                    <option <?php echo ($agama == 'Kristen') ? "selected": "" ?>>Kristen</option>
-                    <option <?php echo ($agama == 'Hindu') ? "selected": "" ?>>Hindu</option>
-                    <option <?php echo ($agama == 'Budha') ? "selected": "" ?>>Budha</option>
-                    <option <?php echo ($agama == 'Katolik') ? "selected": "" ?>>Katolik</option>
-                    <option <?php echo ($agama == 'Konghucu') ? "selected": "" ?>>Konghucu</option>
-                </select>
+                <textarea class="form-control" name="alamat"><?php echo $orangtua['alamat'] ?></textarea>
             </div>
             <div class="form-group">
                 <label for="no_hp"></label>
-                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $siswa['no_hp'] ?>" />
-            </div>
-            <div class="form-group">
-                <label for="kelas"></label>
-                <input type="text" class="form-control" name="kelas" placeholder="Kelas" value="<?php echo $siswa['kelas'] ?>" />
+                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $orangtua['no_hp'] ?>" />
             </div>
             <br>
            
             <div class="form-group">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan_ortu" />
             </div>
         </form>
                                 

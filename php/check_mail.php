@@ -10,7 +10,7 @@
     $query = mysqli_query($connect, $sql);
     $count = mysqli_num_rows ($query);
 
-   // if($count > 0 ) {
+    if($count > 0 ) {
         if($query){
         // kalau berhasil alihkan ke halaman list-siswa.php
         header("location: ../new-password.php?pesan=berhasil");
@@ -20,7 +20,7 @@
       die("Gagal menyimpan perubahan...");
         }
     
-  //  }
+    }
  
 
     

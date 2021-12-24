@@ -43,7 +43,16 @@
 </head>
 
 <body id="page-top">
-    <? session_start()?>
+    <?php 
+        session_start();
+        if(!isset($_SESSION['id'])){
+            header("location:./index.php");
+        }
+        $id = $_SESSION['id'];
+        $query = mysqli_query($connect, "select * from user where id_user = '$id'");
+        $fill = mysqli_fetch_array($query)
+    
+    ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -58,10 +67,10 @@
             <div id="content">
 
                 <!-- Topbar -->
-                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     
                  <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 align-items-center justify-content-center mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Wali</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Daftar Orang Tua</h1>
                     </div>
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -166,7 +175,7 @@
                           <div class="nav-item dropdown no-arrow">
                          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $fill['name']?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -185,7 +194,7 @@
                           <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
                         <h1 class="h3 mb-0 text-gray-800 ">List Wali Kelas</h1>
                         <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
+                                class="fas fa-download fa-sm text-white-50"></i>Tambah Guru</a>
                     </div>
                                  
                             <div class="card-body">
@@ -195,31 +204,26 @@
                                          <tr>
                                             <th scope="col">Nama</th>                                     
                                             <th scope="col">Alamat</th>
-                                            <th scope="col">Jenis Kelamin</th>
-                                            <th scope="col">Agama</th>
                                             <th scope="col">No. Hp</th>
                                             <th scope="col">Tindakan</th>
                                         </tr>
                                     </thead> 
                                      <tbody>
-                                         <!-- <php
-                                            $sql = "SELECT * FROM siswa_10 where kelas='10'"; 
+                                         -- <php
+                                            $sql = "SELECT * FROM orang_tua"; 
                                             $query = mysqli_query($connect, $sql);
-                                            while($siswa = mysqli_fetch_array($query)){
+                                            while($orangtua = mysqli_fetch_array($query)){
                                          echo "<tr>";
-                                         echo "<td>".$siswa['nama']."</td>";
-                                         echo "<td>".$siswa['nis']."</td>";                                     
-                                        echo "<td>".$siswa['alamat']."</td>";
-                                        echo "<td>".$siswa['jenis_kelamin']."</td>";
-                                        echo "<td>".$siswa['agama']."</td>";
-                                        echo "<td>".$siswa['no_hp']."</td>";
+                                         echo "<td>".$orangtua['nama']."</td>";                                   
+                                        echo "<td>".$orangtua['alamat']."</td>";
+                                        echo "<td>".$orangtua['no_hp']."</td>";
                                         echo "<td>";
-                                        echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
-                                        echo "<a href='./php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
+                                        echo "<a href='form-edit-ortu.php?id=".$orangtua['id']."'>Edit</a> | ";
+                                        echo "<a href='./php/hapus.php?id=".$orangtua['id']."'>Hapus</a>";
                                         echo "</td>";
                                         echo "</tr>";
                                         }
-                                        ?> -->
+                                        -->
                                     </tbody>                               
                                 </table>
                             </div>
