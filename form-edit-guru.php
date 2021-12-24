@@ -63,7 +63,16 @@ if( mysqli_num_rows($query) < 1 ){
 </head>
 
 <body id="page-top">
-    <? session_start()?>
+    <?php 
+        session_start();
+        if(!isset($_SESSION['id'])){
+            header("location:./index.php");
+        }
+        $id = $_SESSION['id'];
+        $query = mysqli_query($connect, "select * from user where id_user = '$id'");
+        $fill = mysqli_fetch_array($query);
+    
+    ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -201,9 +210,9 @@ if( mysqli_num_rows($query) < 1 ){
                 </nav>
                  <div class="container-fluid">
                      <div class="card shadow mb-4">
-                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Tambah Guru</h3>
+                     <h3 class="m-0 text-gray-900 text-primary text-center pt-3">Form Edit Guru</h3>
                             <div class="card-body">
-                                <form action="./php/proses-edit.php" method="POST">
+                                <form action="./php/proses-edit-guru.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $guru['id'] ?>" />
 
             <div class="form-group">
@@ -240,8 +249,8 @@ if( mysqli_num_rows($query) < 1 ){
                 <input type="text" class="form-control" name="mapel" placeholder="No Hp" value="<?php echo $guru['mapel'] ?>" />
             </div>
             <div class="form-group">
-                <label for="no_hp"></label>
-                <input type="text" class="form-control" name="no_hp" placeholder="No Hp" value="<?php echo $guru['no_hp'] ?>" />
+                <label for="no_hape"></label>
+                <input type="text" class="form-control" name="no_hape" placeholder="No Hp" value="<?php echo $guru['no_hape'] ?>" />
             </div>
             <br>
            

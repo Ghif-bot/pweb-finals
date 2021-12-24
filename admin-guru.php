@@ -193,7 +193,7 @@
                          <br>
                           <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
                         <h1 class="h3 mb-0 text-gray-800 ">List Guru</h1>
-                        <a href="form-tambah-guru.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a href="regis_guru.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i>Tambah Guru</a>
                     </div>
                                  
@@ -219,12 +219,12 @@
                                             while($guru = mysqli_fetch_array($query)){
                                          echo "<tr>";
                                         echo "<td>".$guru['nip']."</td>";
-                                         echo "<td>".$guru['nama']."</td>";                                   
+                                        echo "<td>".$guru['nama']."</td>";                                   
                                         echo "<td>".$guru['alamat']."</td>";
-                                        echo "<td>".$siswa['jenis_kelamin']."</td>";
-                                        echo "<td>".$siswa['agama']."</td>";
-                                        echo "<td>".$siswa['mata_pelajaran']."</td>";
-                                        echo "<td>".$guru['no_hp']."</td>";
+                                        echo "<td>".$guru['jenis_kelamin']."</td>";
+                                        echo "<td>".$guru['agama']."</td>";
+                                        echo "<td>".$guru['mapel']."</td>";
+                                        echo "<td>".$guru['no_hape']."</td>";
                                         echo "<td>";
                                         echo "<a href='form-edit-guru.php?id=".$guru['id']."'>Edit</a> | ";
                                         echo "<a href='./php/hapus.php?id=".$guru['id']."'>Hapus</a>";

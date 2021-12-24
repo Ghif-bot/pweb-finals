@@ -2,24 +2,25 @@
  
 include("config.php");
  
-if( isset($_GET['id']) ){
- 
-    // ambil id dari query string
-    $id = $_GET['id'];
- 
-    // buat query hapus
-    $sql = "DELETE FROM siswa_10 WHERE id=$id";
-    $query = mysqli_query($connect, $sql);
- 
-    // apakah query hapus berhasil?
-    if( $query ){
-        header('Location: ../admin-utama.php');
-    } else {
-        die("gagal menghapus...");
+$id = $_GET['id'];
+$query = mysqli_query($connect, "select * from user where id_user = '$id'");
+while($fill = mysqli_fetch_assoc($query)){
+    $role = $fill['roles']; 
+    if($role == 1){
+        $delete1 = mysqli_query($connect, "delete from user where id_user = '$id'");
+        $delete2 = mysqli_query($connect, "delete from siswa_10 where id = '$id'");
     }
- 
-} else {
-    die("akses dilarang...");
+    elseif($role == 3){
+         $delete1 = mysqli_query($connect, "delete from user where id_user = '$id'");
+          $delete2 = mysqli_query($connect, "delete from ortu where id = '$id'");
+    }
+    elseif($role == 2){
+        $delete1 = mysqli_query($connect, "delete from user where id_user = '$id'");
+        $delete2 = mysqli_query($connect, "delete from guru where id = '$id'");
+    }
+
+    header("location:../admin-utama.php");
 }
  
+
 ?>

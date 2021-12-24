@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>DAFTAR ORTU</title>
 
     <!-- Custom fonts for this template-->
     <link href="./admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,7 +28,7 @@
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <?php 
-        include("./php/config.php");
+        include './php/config.php';
         session_start();
         if(!isset($_SESSION['id'])){
             header("location:./index.php");
@@ -53,7 +53,7 @@
                                         <br>
                                         <br>
                             </div>
-                            <form class="user"  method="post" action="./php/check_siswa.php">
+                           <form class="user"  method="post" action="./php/check_guru.php">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control form-control-user" id="exampleInputEmail" name="id"
                                         placeholder="id" value="<?php echo $id; ?>">
@@ -63,8 +63,8 @@
                                         placeholder="nama" value="<?php echo $fill['name']; ?>" require>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nis"
-                                        placeholder="NIS">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" name="nip"
+                                        placeholder="NIP">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="alamat"
@@ -95,15 +95,11 @@
                                         placeholder="Nomor Hape">
                                 </div>
                                  <div class="form-group">
-                                    <select name="kelas" class="form-control form-control-user" id="kelas">
-                                        <option value="" disabled selected>Kelas: </option>
-                                        <option value="10">10</option>
-                                        <option value ="11">11</option>
-                                        <option value ="12">12</option>
-                                    </select> 
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="mapel"
+                                        placeholder="mapel">
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Masuk Daftar Siswa
+                                <button type="submit" class="btn btn-primary btn-user btn-block" >
+                                    Masuk Daftar Guru
                                 </button>
                             </form>
                             <hr>

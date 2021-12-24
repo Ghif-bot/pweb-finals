@@ -35,6 +35,14 @@ if($check_pass == $pass){
             // echo $_SESSION['id'];
             header('location:../add_orangtua.php');
         }
+        elseif($role == 2){
+            $query = mysqli_query($connect, "select * from user where email = '$email'");
+            while($fill = $query->fetch_assoc()){
+                $_SESSION['id'] = $fill['id_user'];
+            }
+            // echo $_SESSION['id'];
+            header('location:../add_guru.php');
+        }
         else{
             header('location:../index.php?pesan=berhasil');
         }

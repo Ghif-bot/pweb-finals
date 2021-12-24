@@ -44,13 +44,15 @@
 
 <body id="page-top">
     <?php 
+        include './php/config.php';
+
         session_start();
         if(!isset($_SESSION['id'])){
             header("location:./index.php");
         }
         $id = $_SESSION['id'];
         $query = mysqli_query($connect, "select * from user where id_user = '$id'");
-        $fill = mysqli_fetch_array($query)
+        $fill = mysqli_fetch_array($query);
     
     ?>
     <!-- Page Wrapper -->
@@ -193,8 +195,6 @@
                          <br>
                           <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3 px-3">
                         <h1 class="h3 mb-0 text-gray-800 ">List Siswa Kelas 10</h1>
-                        <a href="form-tambah.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Tambah Siswa</a>
                     </div>
                                  
                             <div class="card-body">
@@ -224,7 +224,7 @@
                                         echo "<td>".$siswa['agama']."</td>";
                                         echo "<td>".$siswa['no_hp']."</td>";
                                         echo "<td>";
-                                        echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                        echo "<a href='form-edit-siswa.php?id=".$siswa['id']."'>Edit</a> | ";
                                         echo "<a href='./php/hapus.php?id=".$siswa['id']."'>Hapus</a>";
                                         echo "</td>";
                                         echo "</tr>";
